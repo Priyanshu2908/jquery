@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery App</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+#menu, #order {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.item {
+    margin: 10px 0;
+}
+
+.order-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var orderButtons = document.querySelectorAll('.order-button');
+    var orderList = document.querySelector('#order-list');
+
+    orderButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var item = this.getAttribute('data-item');
+            var li = document.createElement('li');
+            li.textContent = item;
+            orderList.appendChild(li);
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <h1>Food Delivery App</h1>
+    <div id="menu">
+        <h2>Menu</h2>
+        <div class="item">
+            <h3>Pizza</h3>
+            <button class="order-button" data-item="Pizza">Order</button>
+        </div>
+        <div class="item">
+            <h3>Burger</h3>
+            <button class="order-button" data-item="Burger">Order</button>
+        </div>
+    </div>
+    <div id="order">
+        <h2>Your Order</h2>
+        <ul id="order-list">
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
