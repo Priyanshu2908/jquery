@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").hover(function(){
+                $("#sp").html("Mouse is hovering over the button");
+                $("#sp").css("color","blue");
+                $("#sp").css("font-size","20px");
+            }, function(){
+                $("#sp").html("");
+            });
+    
+            $("#btn").click(function(){
+                $("#sp").html("Button is clicked");
+                $("#sp").css("color","red");
+                $("#sp").css("font-size","20px");
+                $("#sp").fadeOut(2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <span id="sp"></span>
+</body>
+</html>
